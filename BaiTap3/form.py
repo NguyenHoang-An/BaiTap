@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired 
 
 class LoginForm(FlaskForm):
-    db_name = StringField('Database Name', validators=[DataRequired()], default='lab2') 
+    db_name = StringField('Database Name', validators=[DataRequired()], default='dev_database') 
     user = StringField('User', validators=[DataRequired()], default= 'postgres')
     password = PasswordField('Password', validators=[DataRequired()], default='0963631472') 
     host = StringField('Host', validators=[DataRequired()], default='localhost')
