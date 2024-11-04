@@ -42,7 +42,7 @@ def index():
             port=session['port']
         )
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM list')  # Lấy dữ liệu từ bảng 'list'
+        cursor.execute('SELECT * FROM dev_table')  # Lấy dữ liệu từ bảng 'dev_table'
         rows = cursor.fetchall()
         return render_template('index.html', rows=rows)
     except Exception as e:
@@ -62,7 +62,7 @@ def insert():
         )
         cursor = conn.cursor()
         cursor.execute(
-            "INSERT INTO list (mssv, hoten, diachi, email, sodienthoai) VALUES (%s, %s, %s, %s, %s)",
+            "INSERT INTO dev_table (mssv, hoten, diachi, email, sodienthoai) VALUES (%s, %s, %s, %s, %s)",
             (form.mssv.data, form.hoten.data, form.diachi.data, form.email.data, form.sodienthoai.data)
         )
         conn.commit()
