@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <h2>Login</h2>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.db_name.label(class="form-label") }}
+            {{ form.db_name(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.user.label(class="form-label") }}
+            {{ form.user(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.host.label(class="form-label") }}
+            {{ form.host(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.port.label(class="form-label") }}
+            {{ form.port(class="form-control") }}
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+{% endblock %}

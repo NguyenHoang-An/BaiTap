@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+    <h2>Students List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>MSSV</th>
+                <th>Họ Tên</th>
+                <th>Địa Chỉ</th>
+                <th>Email</th>
+                <th>Số Điện Thoại</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('insert') }}" class="btn btn-success">Insert Data</a>
+{% endblock %}
