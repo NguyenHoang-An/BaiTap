@@ -1,31 +1,31 @@
 {% extends 'base.html' %}
-{% block title %}Insert{% endblock %}
+{% block title %}Update{% endblock %}
 {% block content %}
 <div class="container mt-4">
-    <h2 class="text-center">Insert New Data</h2>
-    <form method="post">
+    <h2 class="text-center">Update Data</h2>
+    <form method="post"> 
         {{ form.hidden_tag() }}
-        <div class="form-group">
+        <div class="form-group"> 
             {{ form.mssv.label(class="form-label") }}
             {{ form.mssv(class="form-control") }}
         </div>
-        <div class="form-group">
+        <div class="form-group">  
             {{ form.hoten.label(class="form-label") }}
             {{ form.hoten(class="form-control") }}
         </div>
-        <div class="form-group">
+        <div class="form-group"> 
             {{ form.diachi.label(class="form-label") }}
             {{ form.diachi(class="form-control") }}
         </div>
-        <div class="form-group">
+        <div class="form-group"> 
             {{ form.email.label(class="form-label") }}
             {{ form.email(class="form-control") }}
         </div>
-        <div class="form-group">
+        <div class="form-group"> 
             {{ form.sodienthoai.label(class="form-label") }}
             {{ form.sodienthoai(class="form-control") }}
         </div>
-        <button type="submit" class="btn btn-success">Insert Data</button>
+        <button type="submit" class="btn btn-primary">Update Data</button>
     </form>
 </div>
 {% endblock %}

@@ -17,4 +17,12 @@ class InsertForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     sodienthoai = StringField('Số điện thoại', validators=[DataRequired()])
     submit = SubmitField('Insert Data')
+    
+class UpdateForm(FlaskForm):
+    mssv = StringField('MSSV', validators=[DataRequired()]) 
+    hoten = StringField('Họ tên', validators=[DataRequired()])  
+    diachi = StringField('Địa chi', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired()])
+    sodienthoai = StringField('Số điện thoại', validators=[DataRequired()])
+    submit = SubmitField('Update Data')
      
