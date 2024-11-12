@@ -57,8 +57,8 @@ def insert():
             )
             cursor = conn.cursor()
             cursor.execute(
-                "INSERT INTO dev_table (mssv, hoten, diachi, email, sodienthoai) VALUES (%s, %s, %s, %s, %s)",
-                (form.mssv.data, form.hoten.data, form.diachi.data, form.email.data, form.sodienthoai.data)
+                "INSERT INTO dev_table (mssv, hoten, diachi, email, sodienthoai, gioitinh, ngaysinh) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                (form.mssv.data, form.hoten.data, form.diachi.data, form.email.data, form.sodienthoai.data, form.gioitinh.data, form.ngaysinh.data)
             )
             conn.commit()
             flash('Data inserted successfully!', 'success')
@@ -108,10 +108,12 @@ def update(mssv):
             form.diachi.data = record[2]
             form.email.data = record[3]
             form.sodienthoai.data = record[4]
+            form.gioitinh.data = record[5]
+            form.ngaysinh.data = record[6]
         elif form.validate_on_submit():
             cursor.execute(
-                "UPDATE dev_table SET mssv = %s, hoten = %s, diachi = %s, email = %s, sodienthoai = %s WHERE mssv = %s",
-                (form.mssv.data, form.hoten.data, form.diachi.data, form.email.data, form.sodienthoai.data, str(mssv))
+                "UPDATE dev_table SET mssv = %s, hoten = %s, diachi = %s, email = %s, sodienthoai = %s, gioitinh = %s, ngaysinh = %s WHERE mssv = %s",
+                (form.mssv.data, form.hoten.data, form.diachi.data, form.email.data, form.sodienthoai.data,form.gioitinh.data, form.ngaysinh.data, str(mssv))
             )
             conn.commit()
             flash('Record updated successfully!', 'success')
