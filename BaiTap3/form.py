@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm 
-from wtforms import StringField, PasswordField, SubmitField 
+from wtforms import StringField, PasswordField, SubmitField , SelectField, DateField
 from wtforms.validators import DataRequired 
 
 class LoginForm(FlaskForm):
@@ -16,6 +16,8 @@ class InsertForm(FlaskForm):
     diachi = StringField('Địa chi', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired()])
     sodienthoai = StringField('Số điện thoại', validators=[DataRequired()])
+    gioitinh = SelectField('Giới Tính', choices=[('Nam', 'Nam'), ('Nữ', 'Nữ')], validators=[DataRequired()])
+    ngaysinh = DateField('Ngày sinh', format='%Y-%m-%d', validators=[DataRequired()])
     submit = SubmitField('Insert Data')
     
 class UpdateForm(FlaskForm):
@@ -24,5 +26,7 @@ class UpdateForm(FlaskForm):
     diachi = StringField('Địa chi', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired()])
     sodienthoai = StringField('Số điện thoại', validators=[DataRequired()])
+    gioitinh = SelectField('Giới Tính', choices=[('Nam', 'Nam'), ('Nữ', 'Nữ')], validators=[DataRequired()])
+    ngaysinh = DateField('Ngày sinh', format='%Y-%m-%d', validators=[DataRequired()])
     submit = SubmitField('Update Data')
      
